@@ -1,9 +1,8 @@
 import csv
 import gzip
 
-from sqlalchemy.orm import Session
-
 from main import Movie, Person, SessionLocal, engine
+from sqlalchemy.orm import Session
 
 
 def import_person_data(file_path: str, db: Session):

@@ -1,6 +1,5 @@
-from sqlalchemy.orm import Session
-
 from main import SessionLocal, create_user
+from sqlalchemy.orm import Session
 
 
 def create_initial_users():
