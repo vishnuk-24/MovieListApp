@@ -1,8 +1,11 @@
 import csv
 import gzip
 
-from main import Movie, Person, SessionLocal, engine
 from sqlalchemy.orm import Session
+
+from models.movie import Movie
+from models.person import Person
+from database import SessionLocal, engine
 
 
 def import_person_data(file_path: str, db: Session):
@@ -41,6 +44,6 @@ def import_movie_data(file_path: str, db: Session):
 
 if __name__ == "__main__":
     db = SessionLocal()
-    import_person_data("/home/vishnu/Downloads/name.basics.tsv.gz", db)
-    import_movie_data("/home/vishnu/Downloads/title.basics.tsv.gz", db)
+    import_person_data("/home/vishnu/Downloads/name.basics.tsv.gz", db)  # change location after test
+    import_movie_data("/home/vishnu/Downloads/title.basics.tsv.gz", db)  # change location after test
     db.close()

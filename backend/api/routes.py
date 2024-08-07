@@ -66,7 +66,7 @@ async def search_movie(search: MovieSearch, db=Depends(get_db)):
             "year_released": m.year_released,
             "type": m.type,
             "genre": m.genre,
-            "associated_people": m.associated_people.split(","),
+            "associated_people": m.associated_people.split(",") if m.associated_people else None,
         }
         for m in movies
     ]
@@ -89,7 +89,7 @@ async def search_person(search: PersonSearch, db=Depends(get_db)):
             "name": p.name,
             "birth_year": p.birth_year,
             "profession": p.profession,
-            "known_for_titles": p.known_for_titles.split(","),
+            "known_for_titles": p.known_for_titles.split(",") if p.known_for_titles else None,
         }
         for p in persons
     ]
