@@ -1,4 +1,0 @@
-pip install -r requirements.txt
-python import_datasets.py
-python create_initial_users.py
-uvicorn main:app --reload

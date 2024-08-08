@@ -10,10 +10,7 @@ This is the backend for the Movie List Application, a FastAPI-based service that
 │   ├── __init__.py
 │   └── routes.py
 ├── auth.py
-├── commands.txt
-├── create_initial_users.py
 ├── database.py
-├── import_datasets.py
 ├── main.py
 ├── models
 │   ├── __init__.py
@@ -21,12 +18,19 @@ This is the backend for the Movie List Application, a FastAPI-based service that
 │   ├── person.py
 │   └── user.py
 ├── movie_database.db
+├── readme.md
 ├── requirements.txt
-└── schemas
+├── schemas
+│   ├── __init__.py
+│   ├── movie.py
+│   ├── person.py
+│   └── user.py
+└── scripts
+    ├── commands.txt
+    ├── create_initial_users.py
+    ├── import_datasets.py
     ├── __init__.py
-    ├── movie.py
-    ├── person.py
-    └── user.py
+    └── sample_data.py
 ```
 
 - `api/`: Contains API route definitions
@@ -51,14 +55,14 @@ Before running the application, you need to perform some initial setup steps:
 2. **Import Datasets**:
    Run the `import_datasets.py` script to populate the database with initial movie and person data:
    ```
-   python import_datasets.py
+   python scripts/import_datasets.py
    ```
    This step is crucial as it sets up the core data for the application.
 
 3. **Create Initial Users**:
    Run the `create_initial_users.py` script to set up some initial user accounts:
    ```
-   python create_initial_users.py
+   python scripts/create_initial_users.py
    ```
    This step is important for testing authentication and user-specific features.
 

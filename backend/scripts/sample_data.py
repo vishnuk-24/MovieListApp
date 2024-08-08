@@ -1,8 +1,12 @@
 import csv
 from io import StringIO
 import gzip
+import os
+import sys
 
 from sqlalchemy.orm import Session
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from models.movie import Movie
 from models.person import Person
